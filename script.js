@@ -17,14 +17,20 @@ function addBookToLibrary(){
     let read = document.getElementById('read').checked;
 
     let newBook = new Book(title, author, pages, read)
-    console.log(newBook);
     Library.push(newBook);
+    closeForm();
 };
 
 document.getElementById('bookForm').addEventListener('submit', function(event){
     event.preventDefault();
     addBookToLibrary()
 });
+
+function closeForm(){
+    let bookForm = document.getElementById('bookForm')
+    bookForm.reset();
+    overlay.style.display = 'none';
+}
 
 // Handles pop up form opening and closing
 document.addEventListener('DOMContentLoaded', function () {
@@ -37,7 +43,5 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.style.display = 'flex';
     });
     // Closes form
-    closeFormButton.addEventListener('click', function () {
-        overlay.style.display = 'none';
-    });
+    closeFormButton.addEventListener('click', closeForm);
 });
