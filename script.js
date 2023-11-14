@@ -15,7 +15,14 @@ function renderLibrary() {
     for (let i = 0; i < Library.length; i++){
         let book = Library[i];
         let bookDisplay = document.createElement('div');
-        bookDisplay.innerHTML = `<p>${book.title}</p>`
+        bookDisplay.innerHTML = `
+        <div class="book-card">
+        <h3 class="title">${book.title}</h3>
+        <p class="author">By: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p class="read-status">By: ${book.read ? 'Read' : 'Not Read'}</p>
+        </div>
+        `;
         libraryDisplay.appendChild(bookDisplay)
     }
 }

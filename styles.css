@@ -1,20 +1,33 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: grey;
+    color: black;
+    margin-top: 10px;
+}
+
+.header {
+    align-content: center;
+    width: 100vw;
 }
 
 .overlay {
     display: none;
-    position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
 }
 
 .popup {
-    background-color: red;
-    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
     text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newBook {
+    align-items: center;
 }
 
 .close {
@@ -23,4 +36,33 @@ body {
     right: 10px;
     font-size: 12px;
     cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input {
+    height: 20px;
+    width: 80%;
+    margin-top: 10px;
+    
+}
+
+.book-card {
+    background-color: azure;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+}
+
+#newBook {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
 }
