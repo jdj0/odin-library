@@ -9,6 +9,16 @@ function Book(title, author, pages, read){
     this.read = read;
 };
 
+// Allows user to toggle read/not read when book card has been made
+Book.prototype.readToggle = function (){
+    this.read = !this.read;
+}
+
+function readToggle(index){
+    Library[index].readToggle();
+    renderLibrary();
+} 
+
 function renderLibrary() {
     let libraryDisplay = document.getElementById('library')
     libraryDisplay.innerHTML = '';
@@ -21,6 +31,7 @@ function renderLibrary() {
         <p class="author">By: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
         <p class="read-status">${book.read ? 'Read' : 'Not Read'}</p>
+        <button onclick='readToggle(${i})'>Toggle Read</button>
         <button onclick='deleteBook(${i})'>Delete</button>
         </div>
         `;
