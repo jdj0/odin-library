@@ -20,11 +20,18 @@ function renderLibrary() {
         <h3 class="title">${book.title}</h3>
         <p class="author">By: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
-        <p class="read-status">By: ${book.read ? 'Read' : 'Not Read'}</p>
+        <p class="read-status">${book.read ? 'Read' : 'Not Read'}</p>
+        <button onclick='deleteBook(${i})'>Delete</button>
         </div>
         `;
         libraryDisplay.appendChild(bookDisplay)
     }
+}
+
+// Splices specified books from the Library array and re-renders the library
+function deleteBook(index){
+    Library.splice(index, 1);
+    renderLibrary();
 }
 
 // Function that adds book to library array
